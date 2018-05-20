@@ -1,26 +1,91 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="17B48" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MergeVideoWithIMage" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DGI-7P-TIL">
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="84" id="TDY-Gc-jaH"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="SAMPLE TEXT" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HRU-el-M7J">
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KeF-QJ-mHS">
+                                <state key="normal" title="Image"/>
+                                <connections>
+                                    <action selector="onimageSelect:" destination="BYZ-38-t0r" eventType="touchDown" id="B6s-tT-NCv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yrk-Q8-muL">
+                                <state key="normal" title="Text"/>
+                                <connections>
+                                    <action selector="onAddText:" destination="BYZ-38-t0r" eventType="touchDown" id="cNx-aB-qH6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zep-zj-TMK">
+                                <state key="normal" title="Video"/>
+                                <connections>
+                                    <action selector="videoSelect:" destination="BYZ-38-t0r" eventType="touchDown" id="Zb3-9c-fbx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qcM-lp-fbC">
+                                <state key="normal" title="Export"/>
+                                <connections>
+                                    <action selector="OnExport:" destination="BYZ-38-t0r" eventType="touchDown" id="ceM-Ve-Kup"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="kWD-Fi-sxb"/>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="HRU-el-M7J" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="0lM-Wd-M6l"/>
+                            <constraint firstItem="DGI-7P-TIL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="2Q0-zJ-Zqq"/>
+                            <constraint firstItem="qcM-lp-fbC" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="GCV-9y-ro4"/>
+                            <constraint firstItem="HRU-el-M7J" firstAttribute="top" secondItem="DGI-7P-TIL" secondAttribute="bottom" constant="24" id="cVH-Vb-1HC"/>
+                            <constraint firstItem="qcM-lp-fbC" firstAttribute="centerX" secondItem="HRU-el-M7J" secondAttribute="centerX" id="e3w-Xr-BrS"/>
+                            <constraint firstItem="DGI-7P-TIL" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="mjv-8u-W90"/>
+                            <constraint firstItem="Yrk-Q8-muL" firstAttribute="top" secondItem="HRU-el-M7J" secondAttribute="bottom" constant="57" id="ndf-xz-Owh"/>
+                            <constraint firstItem="HRU-el-M7J" firstAttribute="centerX" secondItem="DGI-7P-TIL" secondAttribute="centerX" id="qvD-5z-qUm"/>
+                            <constraint firstItem="Yrk-Q8-muL" firstAttribute="baseline" secondItem="KeF-QJ-mHS" secondAttribute="baseline" id="rQT-wh-RIX"/>
+                            <constraint firstItem="Yrk-Q8-muL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="150" id="sxq-tb-Ruc"/>
+                            <constraint firstItem="kWD-Fi-sxb" firstAttribute="centerX" secondItem="HRU-el-M7J" secondAttribute="centerX" id="umj-oB-Moe"/>
+                            <constraint firstItem="Yrk-Q8-muL" firstAttribute="baseline" secondItem="zep-zj-TMK" secondAttribute="baseline" id="vJN-Di-63b"/>
+                            <constraint firstItem="Yrk-Q8-muL" firstAttribute="leading" secondItem="KeF-QJ-mHS" secondAttribute="trailing" constant="90" id="xGC-zx-TFv"/>
+                            <constraint firstItem="qcM-lp-fbC" firstAttribute="top" secondItem="kWD-Fi-sxb" secondAttribute="bottom" constant="1" id="xhG-Ud-nkt"/>
+                            <constraint firstAttribute="trailing" secondItem="DGI-7P-TIL" secondAttribute="trailing" id="zdk-aD-Gt4"/>
+                            <constraint firstItem="zep-zj-TMK" firstAttribute="leading" secondItem="Yrk-Q8-muL" secondAttribute="trailing" constant="84" id="zzb-Pc-bul"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="footerText" destination="HRU-el-M7J" id="AO8-MU-iyH"/>
+                        <outlet property="imageView" destination="DGI-7P-TIL" id="tav-aG-mZv"/>
+                        <outlet property="progress" destination="kWD-Fi-sxb" id="u9y-uq-ku4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="25.78125" y="33.3984375"/>
         </scene>
     </scenes>
 </document>
